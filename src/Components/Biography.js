@@ -1,12 +1,61 @@
+import React, { useState, useEffect } from "react";
 import ProfilePic from "../Assets/Image/ProfilePic.jpeg";
 import "./Biography.css";
+import JuneCV from "../Assets/JuneCV.pdf";
+import Image1 from "../Assets/Image/Image1.jpeg";
+import Image2 from "../Assets/Image/Image2.jpeg";
+import Image3 from "../Assets/Image/Image3.jpeg";
+import Image4 from "../Assets/Image/Image4.jpeg";
+import Image5 from "../Assets/Image/Image5.jpeg";
+import { TypeAnimation } from "react-type-animation";
+
 function Biography() {
+  function viewCVHandler() {
+    window.open(JuneCV, "_blank");
+  }
+
+  const images = [ProfilePic, Image1, Image2, Image3, Image4, Image5];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showImage, setShowImage] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowImage(false); // Start the fade-out animation
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        setShowImage(true); // Start the fade-in animation after the new image is loaded
+      }, 500);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div className="biography">
-      <div className="profile-picture">
-        <img src={ProfilePic} alt="ProfilePic" />
+      <div className={`profile-picture ${showImage ? "show" : ""}`}>
+        <img
+          className={`fade-in-out ${showImage ? "show" : ""}`}
+          src={images[currentIndex]}
+          alt="ProfilePic"
+        />
       </div>
       <div className="text">
+        <h2>Rex Lim</h2>
+        <TypeAnimation
+          sequence={[
+            "Computer Science Student, Mobile Developer, Web Developer",
+            1000,
+            "Computer Science Student, Mobile Developer, Web Developer, Full Stack Developer?",
+            2000,
+          ]}
+          speed={80}
+          wrapper="span"
+          cursor={true}
+          repeat={Infinity}
+          deletionSpeed={80}
+          style={{ fontSize: "25px", display: "inline-block" }}
+          preRenderFirstString={true}
+        />
         <p>
           As a university student pursuing a Bachelor's degree in Computer
           Science, I have immersed myself in the ever-evolving world of
@@ -37,11 +86,13 @@ function Biography() {
           contributing my expertise and passion to the ever-evolving landscape
           of computer science and software development.
         </p>
-      
-      <div className="button-row">
-        <button>Download Resume</button>
-        <button>View Resume</button>
-      </div>
+
+        <div className="button-row">
+          <a href={JuneCV} download>
+            <button>Download Resume</button>
+          </a>
+          <button onClick={viewCVHandler}>View Resume</button>
+        </div>
       </div>
     </div>
   );
