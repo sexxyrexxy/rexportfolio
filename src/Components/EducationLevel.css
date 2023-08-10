@@ -1,11 +1,21 @@
 .education-level{
-    width:100%;
-    height:700px;
+    width:90%;
     display:flex;
+    margin: 2%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.education-level-reverse{
+    width:90%;
+    display:flex;
+    flex-direction: row-reverse;
+    margin: 2%;
+    border-radius: 20px;
+    overflow: hidden;
     
 }
 .background-photo{
-    width:40%;
+    width:50%;
     height:inherit;
     background-color:blue;
 }
@@ -17,4 +27,14 @@
 .description{
     background-color: white;
     flex:1;
+    padding:20px;
+}
+.list{
+    display: flex;
+    flex-direction: column; 
+}
+
+.list li{
+    color: var(--background);
+    margin-bottom:5px;
 }

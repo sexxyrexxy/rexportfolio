@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   background-color: var(--background);
   overflow-x: hidden;
+  justify-content: center;
 
 }
 

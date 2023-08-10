@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProfilePic from "../Assets/Image/ProfilePic.jpeg";
 import "./Biography.css";
-import JuneCV from "../Assets/JuneCV.pdf";
+import RexLimCV from "../Assets/RexLimCV.pdf";
 import Image1 from "../Assets/Image/Image1.jpeg";
 import Image2 from "../Assets/Image/Image2.jpeg";
 import Image3 from "../Assets/Image/Image3.jpeg";
@@ -11,7 +11,7 @@ import { TypeAnimation } from "react-type-animation";
 
 function Biography() {
   function viewCVHandler() {
-    window.open(JuneCV, "_blank");
+    window.open(RexLimCV, "_blank");
   }
 
   const images = [ProfilePic, Image1, Image2, Image3, Image4, Image5];
@@ -88,7 +88,7 @@ function Biography() {
         </p>
 
         <div className="button-row">
-          <a href={JuneCV} download>
+          <a href={RexLimCV} download>
             <button>Download Resume</button>
           </a>
           <button onClick={viewCVHandler}>View Resume</button>

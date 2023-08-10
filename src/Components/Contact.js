@@ -1,12 +1,13 @@
 import "./Contact.css";
 import React, { useState } from "react";
+import ContactImage from "../Assets/Image/ContactImage.png";
+import ContactCard from "./ContactCard";
 
 function Contact() {
   const [enteredName, setEnteredName] = useState("");
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredMessage, setEnteredMessage] = useState("");
   const [enteredMessageSubject, setEnteredMessageSubject] = useState("");
-  const [enteredPhone, setEnteredPhone] = useState("");
 
   const nameChangeHandler = (event) => {
     setEnteredName(event.target.value);
@@ -19,9 +20,6 @@ function Contact() {
   };
   const messageSubjectChangeHandler = (event) => {
     setEnteredMessageSubject(event.target.value);
-  };
-  const phoneChangeHandler = (event) => {
-    setEnteredPhone(event.target.value);
   };
   const submitHandler = (event) => {
     event.preventDefault();
@@ -36,39 +34,30 @@ function Contact() {
     setEnteredEmail("");
     setEnteredMessageSubject("");
     setEnteredMessage("");
-    setEnteredPhone("");
   };
 
   return (
     <div className="contact">
-      <h1>You can reach out to me here!</h1>
-      <form>
-        <div className="contact-controls">
-          <div className="fields">
-            <label>Name</label>
-            <input
-              type="text"              
-              onChange={nameChangeHandler}
-              value={enteredName}
-            />
-          </div>
-          <div className="fields">
-            <label>E-mail</label>
-            <input
-              type="text"
-              onChange={emailChangeHandler}
-              value={enteredEmail}
-            />
-          </div>
-          <div className="fields">
-            <label>Phone Number</label>
-            <input
-              type="text"
-              placeholder="### ### ####"
-              onChange={phoneChangeHandler}
-              value={enteredPhone}
-            />
+      <div className="left">
+        <h1>You can reach out to me here!</h1>
+        <form>
+          <div className="contact-controls">
+            <div className="fields">
+              <label>Name</label>
+              <input
+                type="text"
+                onChange={nameChangeHandler}
+                value={enteredName}
+              />
             </div>
+            <div className="fields">
+              <label>E-mail</label>
+              <input
+                type="text"
+                onChange={emailChangeHandler}
+                value={enteredEmail}
+              />
+            </div>            
             <div className="fields">
               <label>Message Subject</label>
               <input
@@ -76,24 +65,28 @@ function Contact() {
                 onChange={messageSubjectChangeHandler}
                 value={enteredMessageSubject}
               />
-              </div>
-              <div className="fields">
-                <label>Message</label>
-                <textarea className="messagefield"
-                  type="text"
-                  onChange={messageChangeHandler}
-                  value={enteredMessage}
-                  
-                />
-              </div>
-                
-        </div>
-        <div className="submit-button">
-          <button type="submit" onClick={submitHandler}>
-            Submit
-          </button>
-        </div>
-      </form>
+            </div>
+            <div className="fields">
+              <label>Message</label>
+              <textarea
+                className="messagefield"
+                type="text"
+                onChange={messageChangeHandler}
+                value={enteredMessage}
+              />
+            </div>
+          </div>
+          <div className="submit-button">
+            <button type="submit" onClick={submitHandler}>
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+      <div className="contact-methods">
+        <img src={ContactImage} alt="Contacts" className="contact-image" />
+        <ContactCard />
+      </div>
     </div>
   );
 }

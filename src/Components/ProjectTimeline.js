@@ -7,7 +7,13 @@ import Carve from "../Assets/Image/carve.png";
 import Arcadia from "../Assets/Image/arcadia.png";
 import GIGICoffee from "../Assets/Image/gigicoffee.png";
 import Hivemind from "../Assets/Image/Hivemind.png";
-import ButtonToTop from "./ButtonToTop";
+import xcessCity from "../Assets/Image/xcessCity.png";
+import ImagineHack from "../Assets/Image/ImagineHack.jpeg";
+import KitaHack from "../Assets/Image/KitaHack.jpeg";
+import SamsungFoldable from "../Assets/Image/SamsungFoldable.jpeg";
+import GSC from "../Assets/Image/GSC.jpeg";
+import TMHackathon from "../Assets/Image/TMHackathon.jpeg";
+import UMSC from "../Assets/Image/UMSC.jpeg";
 import "./ProjectTimeline.css";
 function ProjectTimeline() {
   let timeline = [
@@ -16,6 +22,7 @@ function ProjectTimeline() {
       title: "Carve Part 1",
       occasion: "Kitahack 2023",
       prize: "First Runner-Up",
+      image: KitaHack,
       description: (
         <p>
           Kitahack 2023 is a nationwide hackathon in Malaysia organized by
@@ -41,13 +48,14 @@ function ProjectTimeline() {
         </p>
       ),
       date: "March 2023",
-      icon: <img className="img_logo" src={Carve} />,
+      icon: <img className="img_logo" src={Carve} alt="Carve"/>,
     },
     {
       id: 2,
       title: "Carve Part 2",
       occasion: "Google Solution Challenge 2023",
       prize: "Global Top 100",
+      image: GSC,
       description: (
         <p>
           Google Solution Challenge essentially is the same concept as Kitahack
@@ -73,13 +81,14 @@ function ProjectTimeline() {
         </p>
       ),
       date: "April 2023",
-      icon: <img className="img_logo" src={Carve} />,
+      icon: <img className="img_logo" src={Carve} alt="Carve"/>,
     },
     {
       id: 3,
       title: "Arcadia",
       occasion: "ImagineHack",
       prize: "Best Visual Award",
+      image: ImagineHack,
       description: (
         <p>
           In this hackathon, with the same team, we are the winner of Best
@@ -102,13 +111,14 @@ function ProjectTimeline() {
         </p>
       ),
       date: "May 2023",
-      icon: <img className="img_logo" src={Arcadia} />,
+      icon: <img className="img_logo" src={Arcadia} alt="Arcadia"/>,
     },
     {
       id: 4,
       title: "Hivemind",
       occasion: "University of Malaya Start-Up Challenge",
       prize: "Champion",
+      image: UMSC,
       description: (
         <p>
           The first-place winner of UM Start-Up Challenge 2023, held by
@@ -132,13 +142,14 @@ function ProjectTimeline() {
         </p>
       ),
       date: "May 2023",
-      icon: <img className="img_logo" src={Hivemind} />,
+      icon: <img className="img_logo" src={Hivemind} alt="Hivemind" />,
     },
     {
       id: 5,
       title: "Reimagined GIGI Coffee",
       occasion: "Reimagine Foldables for Malaysians",
       prize: "First Runner Up",
+      image: SamsungFoldable,
       description: (
         <p>
           I was honored to secure the first runner-up position in Samsung's
@@ -164,16 +175,41 @@ function ProjectTimeline() {
         </p>
       ),
       date: "June 2023",
-      icon: <img className="img_logo" src={GIGICoffee} />,
+      icon: <img className="img_logo" src={GIGICoffee} alt="GIGICoffee"/>,
     },
-    // {
-    //   id: 6,
-    //   title: "Hivemind",
-    //   occasion: "University of Malaya Start-Up Challenge",
-    //   prize: "Best Visual Award",
-    //   description: "Developed a parenting application",
-    //   date: "March 2023",
-    // },
+    {
+      id: 6,
+      title: "XcessCITY",
+      occasion: "Taylor's Makerspace Hackathon",
+      prize: "Second Runner Up",
+      image: TMHackathon,
+      description: (
+        <p>
+          I was honored to secure the first runner-up position in Samsung's
+          Reimagine Foldables for Malaysians UI/UX Hackathon, a prestigious
+          competition focused on enhancing the UI/UX experience of local F&B
+          apps on foldable screens.
+          <p />
+          With a prize pool of nearly 40,000 Ringgit worth of Samsung devices, I
+          successfully redesigned the Gigi Coffee app, implementing a responsive
+          layout, immersive app continuity, optimized flex mode, and larger
+          screen features.
+          <p />
+          Through these upgrades, I maximized the potential of the Galaxy Fold's
+          larger screen, providing users with an enhanced experience. I employed
+          Figma, Photoshop, and Canva to create visually stunning designs and
+          prototypes, which were presented to a panel of esteemed judges,
+          including CEOs, design lecturers, and Samsung product managers.
+          <p />
+          Interestingly, we also received a personal invite from GIGI Coffee, a
+          multi-million dollar coffee franchise, to pitch our designs in their
+          headquarters. In the end, the GIGI Coffee team gave very positive
+          feedback to our team and even asked for our design deck.
+        </p>
+      ),
+      date: "August 2023",
+      icon: <img className="img_logo" src={xcessCity} alt="xcessCITY"/>,
+    },
   ];
   return (
     <div className="timeline_elements">
@@ -181,7 +217,7 @@ function ProjectTimeline() {
         {timeline.map((elements) => {
           return (
             <VerticalTimelineElement
-              key={elements.key}
+              key={elements.id}
               date={elements.date}
               dateClassName="date_custom"
               icon={elements.icon}
@@ -194,6 +230,9 @@ function ProjectTimeline() {
                 {" "}
                 {elements.occasion + " - " + elements.prize}
               </h5>
+              <div className="photo-comp">
+                <img src={elements.image} alt="ImagineHack" />
+              </div>
               {elements.description}
             </VerticalTimelineElement>
           );

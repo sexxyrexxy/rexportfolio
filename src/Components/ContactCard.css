@@ -1,0 +1,14 @@
+.row {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-items: start;
+  gap:1rem;
+  margin-top:50px;
+  color:var(--background);
+}
+.row-items {
+  display: flex;
+  align-items: center;
+  gap:2rem;
+}

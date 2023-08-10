@@ -11,3 +11,16 @@
 .date_custom{
     color:var(--secondary-color);
 }
+.photo-comp{
+    width:100%;
+    height:20%;
+    overflow: hidden;
+    border-radius: 10px;  
+    margin-bottom: 10px;
+    margin-top:10px;
+}
+.photo-comp img{
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}
