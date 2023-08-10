@@ -1,5 +1,7 @@
+import ProjectTimeline from "../Components/ProjectTimeline";
+
 function ProjectPage() {
-    return ( <h1>ddsdsdsdsdsdsds</h1> );
+    return ( <ProjectTimeline/> );
 }
 
 export default ProjectPage;

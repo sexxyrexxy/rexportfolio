@@ -16,7 +16,7 @@ function Biography() {
 
   const images = [ProfilePic, Image1, Image2, Image3, Image4, Image5];
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [showImage, setShowImage] = useState(false);
+  const [showImage, setShowImage] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -51,7 +51,7 @@ function Biography() {
           speed={80}
           wrapper="span"
           cursor={true}
-          repeat={Infinity}
+          repeat={3}
           deletionSpeed={80}
           style={{ fontSize: "25px", display: "inline-block" }}
           preRenderFirstString={true}

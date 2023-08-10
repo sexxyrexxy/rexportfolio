@@ -1,3 +1,13 @@
-.vertical-timeline-element-title{
-    color:black;
+.timeline_elements{
+    background-color:var(--background);
+    width: 100%;
+}
+.img_logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+.date_custom{
+    color:var(--secondary-color);
 }

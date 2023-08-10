@@ -7,7 +7,6 @@
     color: var(--primary-color);
     justify-content: center;
     font-size: 50px;
-    z-index: 1;
     position:fixed;
     /* padding:50px; */
 }
@@ -32,7 +31,7 @@ video {
     position:fixed;
     right:20px;
     bottom:40px;
-    z-index: 1;
+ 
   }
   .skip:hover{
     box-shadow: 10px 10px 0px #433957; 
@@ -45,6 +44,7 @@ video {
     z-index: 1;
     text-align: center;
     color: var(--primary-color);
+    padding:40px;
   }
   .overlay{
     height:100%;
@@ -52,6 +52,5 @@ video {
     position:absolute;
     background-color: black;
     opacity:30%;
-    z-index: 1;
   }
 

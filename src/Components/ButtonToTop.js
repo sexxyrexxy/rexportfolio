@@ -7,8 +7,9 @@ const MyComponent = () => {
     // Get the top-most element on the page (e.g., the <body> element)
     const topElement = document.body;
 
-    // Scroll smoothly to the top of the page
+    // // Scroll smoothly to the top of the page
     topElement.scrollIntoView({ behavior :"smooth" });
+
   };
 
   return (
