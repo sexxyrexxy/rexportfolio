@@ -7,7 +7,6 @@ function HomePage() {
     return (        
     <div className='HomePage'>
         <Biography />
-        <ButtonToTop />
     </div> );
 }
 
