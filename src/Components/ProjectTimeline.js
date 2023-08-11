@@ -48,7 +48,7 @@ function ProjectTimeline() {
         </p>
       ),
       date: "March 2023",
-      icon: <img className="img_logo" src={Carve} alt="Carve"/>,
+      icon: <img className="img_logo" src={Carve} alt="Carve" />,
     },
     {
       id: 2,
@@ -81,7 +81,7 @@ function ProjectTimeline() {
         </p>
       ),
       date: "April 2023",
-      icon: <img className="img_logo" src={Carve} alt="Carve"/>,
+      icon: <img className="img_logo" src={Carve} alt="Carve" />,
     },
     {
       id: 3,
@@ -111,7 +111,7 @@ function ProjectTimeline() {
         </p>
       ),
       date: "May 2023",
-      icon: <img className="img_logo" src={Arcadia} alt="Arcadia"/>,
+      icon: <img className="img_logo" src={Arcadia} alt="Arcadia" />,
     },
     {
       id: 4,
@@ -175,7 +175,7 @@ function ProjectTimeline() {
         </p>
       ),
       date: "June 2023",
-      icon: <img className="img_logo" src={GIGICoffee} alt="GIGICoffee"/>,
+      icon: <img className="img_logo" src={GIGICoffee} alt="GIGICoffee" />,
     },
     {
       id: 6,
@@ -208,7 +208,7 @@ function ProjectTimeline() {
         </p>
       ),
       date: "August 2023",
-      icon: <img className="img_logo" src={xcessCity} alt="xcessCITY"/>,
+      icon: <img className="img_logo" src={xcessCity} alt="xcessCITY" />,
     },
   ];
   return (
@@ -216,6 +216,7 @@ function ProjectTimeline() {
       <VerticalTimeline>
         {timeline.map((elements) => {
           return (
+            
             <VerticalTimelineElement
               key={elements.id}
               date={elements.date}
@@ -231,7 +232,11 @@ function ProjectTimeline() {
                 {elements.occasion + " - " + elements.prize}
               </h5>
               <div className="photo-comp">
-                <img src={elements.image} alt="ImagineHack" />
+                <img
+                  src={elements.image}
+                  alt="ImagineHack"
+                 
+                />
               </div>
               {elements.description}
             </VerticalTimelineElement>
